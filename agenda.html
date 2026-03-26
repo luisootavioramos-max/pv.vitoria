@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda - P.V Vitoria</title>
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/agenda.css">
+</head>
+<body>
+    <header>
+        <h1>P.V Vitoria</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destaques.html">Destaques</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="elenco.html">Elenco</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="agenda-container">
+            <article class="agenda-content">
+                <h2>Agenda do Time</h2>
+                
+                <div class="calendar-navigation">
+                    <button class="btn-nav" id="prevMonth">&lt; Anterior</button>
+                    <h3 id="monthYear"></h3>
+                    <button class="btn-nav" id="nextMonth">Próximo &gt;</button>
+                </div>
+
+                <div class="calendar-wrapper">
+                    <table class="calendar">
+                        <thead>
+                            <tr>
+                                <th>Dom</th>
+                                <th>Seg</th>
+                                <th>Ter</th>
+                                <th>Qua</th>
+                                <th>Qui</th>
+                                <th>Sex</th>
+                                <th>Sab</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calendarDays"></tbody>
+                    </table>
+                </div>
+
+            </article>
+
+            <aside class="agenda-events">
+                <button class="btn-adm" id="btnADM" title="Gerenciar compromissos">⚙</button>
+                <h3>Próximo Jogo</h3>
+                
+                <div id="nextGameContainer">
+                    <div class="next-game no-games">
+                        <p>Nenhum jogo agendado</p>
+                    </div>
+                </div>
+
+                <div class="legend">
+                    <p><strong>Legenda:</strong></p>
+                    <div class="legend-item">
+                        <span class="legend-color event-day"></span>
+                        <span>Com evento</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color today"></span>
+                        <span>Hoje</span>
+                    </div>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <!-- Modal de Autenticação -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Acesso Restrito</h3>
+            </div>
+            <form id="authForm">
+                <div class="form-group">
+                    <label for="authPassword">Digite a senha para continuar:</label>
+                    <input type="password" id="authPassword" placeholder="Senha" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn-save">Confirmar</button>
+                    <button type="button" class="btn-cancel" id="btnCancelAuth">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para editar/adicionar evento -->
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Adicionar Compromisso</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label for="eventDate">Data:</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventTitle">Título:</label>
+                    <input type="text" id="eventTitle" placeholder="Ex: Jogo Campeonato" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventTime">Horário:</label>
+                    <input type="time" id="eventTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventLocation">Local:</label>
+                    <input type="text" id="eventLocation" placeholder="Ex: Campo da Vila" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventOpponent">Adversário/Detalhes:</label>
+                    <input type="text" id="eventOpponent" placeholder="Ex: FC União" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn-save">Salvar</button>
+                    <button type="button" class="btn-cancel" id="btnCancelForm">Cancelar</button>
+                    <button type="button" class="btn-delete" id="btnDeleteEvent" style="display: none;">Deletar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 PV.Vitória - Todos os direitos reservados.</p>
+        <p>Site desenvolvido por Luis</p>
+    </footer>
+
+    <script src="js/agenda.js"></script>
+</body>
+</html>

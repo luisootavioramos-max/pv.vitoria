@@ -1,0 +1,619 @@
+@charset "UTF-8";
+
+/* Agenda Styles */
+.agenda-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.agenda-content {
+    flex: 2;
+    background-color: var(--color05);
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.agenda-content h2 {
+    color: var(--color02);
+    margin-bottom: 1.5rem;
+    font-size: 2em;
+}
+
+.destaques-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.destaque-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0 8px rgba(0,0,0,.08);
+}
+
+.destaque-card h3 {
+    margin-bottom: .8rem;
+    color: var(--color01);
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stats-table th,
+.stats-table td {
+    border: 1px solid var(--color04);
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+.stats-table th {
+    background-color: var(--color05);
+    color: var(--color02);
+}
+
+.stats-table td:last-child {
+    text-align: right;
+}
+
+.stats-table button {
+    margin-left: 0.2rem;
+    font-size: 0.75rem;
+}
+
+.calendar-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.calendar-navigation h3 {
+    color: var(--color01);
+    font-size: 1.3em;
+    flex: 1;
+    text-align: center;
+    min-width: 150px;
+}
+
+.btn-nav {
+    background-color: var(--color02);
+    color: var(--color05);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-nav:hover {
+    background-color: var(--color03);
+    transform: translateY(-2px);
+}
+
+.btn-nav:active {
+    transform: translateY(0);
+}
+
+/* Botão ADM Discreto */
+.btn-adm {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--color03);
+    cursor: pointer;
+    transition: color 0.3s, transform 0.2s;
+    padding: 0.5rem;
+}
+
+.btn-adm:hover {
+    color: var(--color02);
+    transform: scale(1.15) rotate(45deg);
+}
+
+.calendar-wrapper {
+    overflow-x: auto;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid var(--color04);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.calendar thead {
+    background-color: var(--color01);
+    color: var(--color05);
+}
+
+.calendar th {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.calendar td {
+    padding: 0.8rem;
+    text-align: center;
+    border: 1px solid var(--color04);
+    height: 80px;
+    vertical-align: top;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.calendar td:hover {
+    background-color: var(--color05);
+}
+
+.calendar td.other-month {
+    color: var(--color03);
+    background-color: #fafafa;
+}
+
+.calendar td.today {
+    background-color: #ffe4e4;
+    font-weight: bold;
+    color: var(--color01);
+    border: 2px solid var(--color02);
+}
+
+.calendar td.event-day::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--color02);
+    border-radius: 50%;
+}
+
+.calendar td.event-day.today::after {
+    background-color: #d9534f;
+}
+
+.calendar-day-number {
+    font-weight: 600;
+    color: var(--color01);
+}
+
+/* Sidebar de Próximo Jogo */
+.agenda-events {
+    flex: 1;
+    background-color: var(--color04);
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    position: relative;
+}
+
+.agenda-events h3 {
+    color: var(--color01);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.next-game {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border-left: 4px solid var(--color02);
+    margin-bottom: 2rem;
+}
+
+.next-game.no-games {
+    background-color: #f9f9f9;
+    color: var(--color03);
+    border-left-color: var(--color03);
+}
+
+.next-game time {
+    display: block;
+    color: var(--color02);
+    font-weight: 600;
+    font-size: 0.95em;
+    margin-bottom: 0.8rem;
+}
+
+.next-game h4 {
+    color: var(--color01);
+    margin-bottom: 1rem;
+    font-size: 1.3em;
+}
+
+.next-game p {
+    color: var(--color02);
+    font-size: 0.95em;
+    margin-bottom: 0.6rem;
+    text-indent: 0;
+    line-height: 1.6;
+}
+
+.next-game p strong {
+    color: var(--color01);
+}
+
+/* Formulário de Edição */
+.edit-form {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+}
+
+.edit-form h4 {
+    color: var(--color01);
+    margin-bottom: 1.2rem;
+    font-size: 1.1em;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--color01);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    font-size: 0.9em;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--color04);
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+    color: var(--color01);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color02);
+    box-shadow: 0 0 4px rgba(89, 89, 89, 0.2);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.btn-save, .btn-cancel, .btn-delete {
+    flex: 1;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-save {
+    background-color: var(--color02);
+    color: var(--color05);
+}
+
+.btn-save:hover {
+    background-color: var(--color03);
+}
+
+.btn-cancel {
+    background-color: var(--color04);
+    color: var(--color01);
+}
+
+.btn-cancel:hover {
+    background-color: var(--color03);
+}
+
+.btn-delete {
+    background-color: #d9534f;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c9453f;
+}
+
+.legend {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    border-top: 2px solid var(--color04);
+}
+
+.legend p {
+    color: var(--color01);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    text-indent: 0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+    color: var(--color02);
+    font-size: 0.9em;
+}
+
+.legend-item:last-child {
+    margin-bottom: 0;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+}
+
+.legend-color.event-day {
+    background-color: var(--color02);
+}
+
+.legend-color.today {
+    background-color: #ffe4e4;
+    border: 1px solid var(--color02);
+}
+
+/* Botões de Ação */
+.action-buttons {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.btn-edit, .btn-remove {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85em;
+    transition: background-color 0.3s;
+}
+
+.btn-edit {
+    background-color: var(--color02);
+    color: var(--color05);
+}
+
+.btn-edit:hover {
+    background-color: var(--color03);
+}
+
+.btn-remove {
+    background-color: #d9534f;
+    color: white;
+}
+
+.btn-remove:hover {
+    background-color: #c9453f;
+}
+
+.btn-add-event {
+    background-color: var(--color02);
+    color: var(--color05);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-add-event:hover {
+    background-color: var(--color03);
+}
+
+/* Botão ADM Discreto */
+.btn-adm {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--color03);
+    cursor: pointer;
+    transition: color 0.3s, transform 0.2s;
+    padding: 0.5rem;
+}
+
+.btn-adm:hover {
+    color: var(--color02);
+    transform: scale(1.15) rotate(45deg);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h3 {
+    color: var(--color01);
+    font-size: 1.3em;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--color02);
+}
+
+.close-modal:hover {
+    color: var(--color01);
+}
+@media (max-width: 768px) {
+    .agenda-container {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .agenda-content {
+        flex: 1;
+        padding: 1em;
+    }
+
+    .agenda-content h2 {
+        font-size: 1.5em;
+    }
+
+    .calendar-navigation {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .calendar-navigation h3 {
+        min-width: auto;
+        margin: 0.3rem 0;
+    }
+
+    .btn-nav {
+        width: 100%;
+    }
+
+    .calendar td {
+        padding: 0.6rem;
+        height: 70px;
+        font-size: 0.85em;
+    }
+
+    .calendar th {
+        padding: 0.7rem;
+        font-size: 0.85em;
+    }
+
+    .calendar-day-number {
+        font-size: 0.9em;
+    }
+
+    .agenda-events {
+        flex: 1;
+        padding: 1em;
+        height: auto;
+    }
+
+    .agenda-events h3 {
+        font-size: 1.2em;
+    }
+
+    .next-game {
+        padding: 1.2rem;
+    }
+
+    .next-game h4 {
+        font-size: 1.1em;
+    }
+
+    .next-game p {
+        font-size: 0.9em;
+    }
+
+    .form-buttons {
+        gap: 0.5rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar {
+        font-size: 0.8em;
+    }
+
+    .calendar td {
+        padding: 0.4rem;
+        height: 60px;
+    }
+
+    .calendar th {
+        padding: 0.5rem;
+        font-size: 0.75em;
+    }
+
+    .calendar-day-number {
+        font-size: 0.8em;
+    }
+
+    .btn-nav {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9em;
+    }
+
+    .next-game {
+        padding: 1rem;
+    }
+
+    .next-game h4 {
+        font-size: 1em;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+}
