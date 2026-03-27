@@ -9,76 +9,75 @@
 </head>
 <body>
     <header>
-        <h1>P.V Vitoria</h1>
+        <h1>PV. Vitoria</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="agenda.html">Agenda</a></li>
                 <li><a href="contato.html">Contato</a></li>
-                <li><a href="elenco.html">Elenco</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="stats-container">
-        <article class="cardlista">
-            <h2>⚽ Artilharia</h2>
-            <div class="button-group">
-                <button class="btn-add" id="addArtilharia">Adicionar</button>
-                <button class="btn-remove" id="removeArtilharia">Remover</button>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Jogador</th>
-                        <th>Gols</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="lista-artilheiros">
-                </tbody>
-            </table>
-        </article>
-
-        <article class="cardlista">
-            <h2>👟 Assistências</h2>
-            <div class="button-group">
-                <button class="btn-add" id="addAssistencias">Adicionar</button>
-                <button class="btn-remove" id="removeAssistencias">Remover</button>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Jogador</th>
-                        <th>Assis.</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="lista-assistentes">
-                </tbody>
-            </table>
-        </article>
-    </section>
-</main>
-
-    <!-- Modal de Autenticação -->
-    <div class="modal" id="authModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Acesso Restrito</h3>
-            </div>
-            <form id="authForm">
-                <div class="form-group">
-                    <label for="authPassword">Digite a senha para continuar:</label>
-                    <input type="password" id="authPassword" placeholder="Senha" required>
+    <main>
+        <section class="stats-container">
+            <article class="cardlista">
+                <h2>⚽ Artilharia</h2>
+                <div class="button-group">
+                    <button class="btn-add" id="addArtilharia">Adicionar</button>
+                    <button class="btn-remove" id="removeArtilharia">Remover</button>
                 </div>
-                <div class="form-buttons">
-                    <button type="submit" class="btn-save">Confirmar</button>
-                    <button type="button" class="btn-cancel" id="btnCancelAuth">Cancelar</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jogador</th>
+                            <th>Gols</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-artilheiros">
+                        </tbody>
+                </table>
+            </article>
+
+            <article class="cardlista">
+                <h2>👟 Assistências</h2>
+                <div class="button-group">
+                    <button class="btn-add" id="addAssistencias">Adicionar</button>
+                    <button class="btn-remove" id="removeAssistencias">Remover</button>
                 </div>
-            </form>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jogador</th>
+                            <th>Assis.</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-assistentes">
+                        </tbody>
+                </table>
+            </article>
+        </section>
+
+        <div class="modal" id="authModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Acesso Restrito</h3>
+                </div>
+                <form id="authForm">
+                    <div class="form-group">
+                        <label for="authPassword">Digite a senha para continuar:</label>
+                        <input type="password" id="authPassword" placeholder="Senha" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-save">Confirmar</button>
+                        <button type="button" class="btn-cancel" id="btnCancelAuth">Cancelar</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
+    </main>
 
     <footer>
         <p>&copy; 2026 PV.Vitória - Todos os direitos reservados.</p>

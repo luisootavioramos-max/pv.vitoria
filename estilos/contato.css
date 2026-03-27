@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+/* Centralização do conteúdo na página de contato */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; /* Faz o card ficar centralizado verticalmente */
+    padding: 20px;
+}
+
+/* Estilo do Card de Contato */
+.card {
+    background-color: var(--color05);
+    border: 2px solid var(--color03);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 8px 8px 0px var(--color02); /* Sombra sólida estilo retrô */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--color01);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--color02);
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+/* Estilo do Botão WhatsApp */
+.btn-whatsapp {
+    display: inline-block;
+    background-color: var(--color01);
+    color: var(--color05);
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid var(--color01);
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--color05);
+    color: var(--color01);
+    border: 2px solid var(--color01);
+}
+
+/* Ajustes no Footer para não subir na tela */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color01);
+    color: var(--color05);
+    text-align: center;
+    padding: 15px;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .card {
+        padding: 25px;
+    }
+    
+    .card h3 {
+        font-size: 1.4rem;
+    }
+}
