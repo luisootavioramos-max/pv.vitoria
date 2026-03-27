@@ -1,4 +1,5 @@
-/* Variáveis de Cores fornecidas */
+@charset "UTF-8";
+
 :root {
     --color01: #0D0D0D;
     --color02: #595959;
@@ -7,7 +8,6 @@
     --color05: #F2F2F2;
 }
 
-/* Estrutura para o Footer ficar embaixo */
 html, body {
     height: 100%;
     margin: 0;
@@ -21,7 +21,7 @@ body {
 }
 
 main {
-    flex: 1 0 auto; /* Faz o conteúdo principal esticar e empurrar o footer */
+    flex: 1 0 auto; 
     padding: 20px;
 }
 
@@ -33,7 +33,6 @@ footer {
     padding: 20px;
 }
 
-/* Estilos da Seção de Destaques */
 .stats-container {
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +66,6 @@ footer {
     margin-bottom: 1rem;
 }
 
-/* Botões */
 .btn-add, .btn-edit-all, .btn-remove, .btn-save, .btn-edit-row {
     padding: 0.6em 1.2em;
     background-color: var(--color02);
@@ -92,7 +90,6 @@ footer {
     cursor: pointer;
 }
 
-/* Tabelas */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -110,7 +107,6 @@ th {
     color: var(--color01);
 }
 
-/* Modal */
 .modal {
     display: none;
     position: fixed;

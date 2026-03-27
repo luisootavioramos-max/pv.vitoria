@@ -1,3 +1,12 @@
+// Lógica do Menu Hambúrguer
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+});
+
 // Gerenciador de eventos com localStorage
 class EventManager {
     constructor() {

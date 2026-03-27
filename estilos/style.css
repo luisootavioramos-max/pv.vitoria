@@ -165,6 +165,61 @@ footer p {
         margin: 0.5rem 0;
     }
 
+    /* --- Estilo do Botão Hambúrguer (Escondido por padrão) --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto 20px auto; /* Centraliza no cabeçalho mobile */
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color05);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+/* --- Ajustes na Responsividade (Media Query) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Mostra o botão no mobile */
+    }
+
+    nav {
+        display: none; /* Esconde a lista original */
+        width: 100%;
+    }
+
+    nav.active {
+        display: block; /* Mostra quando clicado */
+    }
+
+    nav ul li {
+        display: block;
+        margin: 1rem 0;
+        border-bottom: 1px solid var(--color02);
+        padding-bottom: 10px;
+    }
+
+    /* Animação do "X" no botão quando ativo */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+}
+
     main {
         padding: 0 0.5rem;
         margin: 1em auto 0;
